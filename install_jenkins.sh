@@ -1,29 +1,35 @@
 #!/bin/bash
-# Jenkins installation script for Ubuntu/Debian
+#set -e
 
-# Update system
-sudo apt update -y
-sudo apt upgrade -y
+echo "🔄 Updating package list..."
+sudo apt update
 
-# Install Java (Jenkins requires Java)
-sudo apt install openjdk-17-jdk -y
+echo "📦 Installing Java (OpenJDK 21) and fontconfig..."
+sudo apt install -y fontconfig openjdk-21-jre
 
-# Add Jenkins repo key
-curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
-  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo "✅ Checking Java version..."
+java -version
 
-# Add Jenkins repo
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
-  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
-  /etc/apt/sources.list.d/jenkins.list > /dev/null
+echo "🔑 Adding Jenkins GPG key..."
+sudo mkdir -p /etc/apt/keyrings
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
 
-# Install Jenkins
-sudo apt update -y
-sudo apt install jenkins -y
+echo "📝 Adding Jenkins repository..."
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc] \
+https://pkg.jenkins.io/debian-stable binary/" | sudo tee \
+/etc/apt/sources.list.d/jenkins.list > /dev/null
 
-# Enable and start Jenkins service
+echo "🔄 Updating package list again..."
+sudo apt update
+
+echo "📦 Installing Jenkins..."
+sudo apt install -y jenkins
+
+echo "🚀 Enabling and starting Jenkins service..."
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 
-echo "✅ Jenkins installation complete. Access it at http://localhost:8080"
+echo "🎉 Jenkins installation complete!"
+echo "👉 Access Jenkins at: http://localhost:8080"
 

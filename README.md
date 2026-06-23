@@ -36,22 +36,22 @@ The script performs the following actions:
 - Installs Jenkins  
 - Starts and enables Jenkins service  
 
-
 ##  How to Use
-### Step 1: Clone the Repository
-```bash
+
+##  Clone the Repository
+bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
 
-**Give Permission**
+##  Give Permission
 - chmod +x jenkins-install.sh
 
-**Run Script**
+##  Run Script
 - ./jenkins-install.sh
 
-**Access Jenkins**
+##  Access Jenkins
 - Once installation is complete, open your browser:-
 - http://localhost:8080
 
-**Get Initial Admin Password**
+##  Get Initial Admin Password
 - sudo cat /var/lib/jenkins/secrets/initialAdminPassword (Run command in Terminal and password is show)

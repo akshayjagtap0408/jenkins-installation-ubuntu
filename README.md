@@ -43,12 +43,15 @@ The script performs the following actions:
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
 
-##  Give Permission
-          chmod +x jenkins-install.sh
+**Give Permission**
+- chmod +x jenkins-install.sh
+
 **Run Script**
-          ./jenkins-install.sh
+- ./jenkins-install.sh
+
 **Access Jenkins**
-          Once installation is complete, open your browser:-
-          http://localhost:8080
+- Once installation is complete, open your browser:-
+- http://localhost:8080
+
 **Get Initial Admin Password**
-          sudo cat /var/lib/jenkins/secrets/initialAdminPassword (Run command in Terminal and password is show)
+- sudo cat /var/lib/jenkins/secrets/initialAdminPassword (Run command in Terminal and password is show)

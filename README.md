@@ -5,31 +5,28 @@ One‑time bash script to install Jenkins on Ubuntu
 # Jenkins Installation Script
 >>>>>>> 0e9edfc (Initial commit: Jenkins installation script)
 
-# ?? Jenkins Installation Script
+#  Jenkins Installation Script
 
 This repository contains a **bash script to install Jenkins automatically** on Ubuntu/Debian systems.
 
----
 
-## ?? Features
-- ? Installs Java (OpenJDK 21)
-- ? Installs Jenkins
-- ? Installs required dependencies
-- ? Configures and starts Jenkins service
 
----
+##  Features
+-  Installs Java (OpenJDK 21)
+-  Installs Jenkins
+-  Installs required dependencies
+-  Configures and starts Jenkins service
 
-## ?? Prerequisites
+
+##  Prerequisites
 Before running the script, make sure:
 
-- ? You are using **Ubuntu/Debian-based system**
-- ? You have **sudo/root access**
-- ? Internet connection is available
+-  You are using **Ubuntu/Debian-based system**
+-  You have **sudo/root access**
+-  Internet connection is available
 
----
 
-## ??? What This Script Does
-
+## What This Script Does
 The script performs the following actions:
 
 - Updates package list  
@@ -39,16 +36,14 @@ The script performs the following actions:
 - Installs Jenkins  
 - Starts and enables Jenkins service  
 
----
 
-## ?? How to Use
-
+##  How to Use
 ### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
 
-**Give Permission**
+##  Give Permission
           chmod +x jenkins-install.sh
 **Run Script**
           ./jenkins-install.sh
